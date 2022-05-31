@@ -2,11 +2,12 @@
 <html>
 
 <head>
+  <meta lang="es">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- PAGE settings -->
   <link rel="icon" href="https://templates.pingendo.com/assets/Pingendo_favicon.ico">
-  <title>Información</title>
+  <title>Contacto</title>
   <meta name="description">
   <meta name="keywords">
   <meta name="author" content="Pingendo">
@@ -16,6 +17,21 @@
   <link rel="stylesheet" href="../wireframe.css">
 </head>
 
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script>
+  function crearPDF(){
+    let nombre= document.getElementById('name').value;
+    let correo = document.getElementById("email").value;
+    let asunto = document.getElementById("affair").value;
+    let mensaje = document.getElementById("message").value;
+
+    var doc = new jsPDF();
+    doc.text("test", 10, 10);
+
+    doc.save("salida.pdf");
+  }
+</script>
 <body class="">
   <nav class="navbar navbar-expand-md navbar-dark bg-dark">
     <div class="container-fluid">
@@ -25,31 +41,32 @@
       <div class="collapse navbar-collapse text-center justify-content-between" id="navbar2SupportedContent">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link mx-2" href="informacion.html">Información</a>
+            <a class="nav-link mx-2" href="../marcoteorico/informacion.html">Información</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link mx-2" href="../secciones/impacto.html">Impacto</a>
+            <a class="nav-link mx-2" href="impacto.html">Impacto</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link mx-2" href="../secciones/situacion actual.html">Situación actual</a>
+            <a class="nav-link mx-2" href="situacion actual.html">Situación actual</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link mx-2" href="../secciones/visionaf.html">Visión a futuro</a>
+            <a class="nav-link mx-2" href="visionaf.html">Visión a futuro</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link mx-2" href="../secciones/galerias.html">Galerías</a>
+            <a class="nav-link mx-2" href="galerias.html">Galerías</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link mx-2" href="../secciones/ayuda.html">Ayuda<br></a>
+            <a class="nav-link mx-2" href="ayuda.html">Ayuda<br></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link mx-2" href="../secciones/redes.html">Redes Sociales<br></a>
+            <a class="nav-link mx-2" href="redes.html">Redes Sociales<br></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link mx-2" href="../secciones/contacto.html">Contacto</a>
+            <a class="nav-link mx-2" href="contacto.html">Contacto</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link mx-2" href="../secciones/chat.html">Chat</a>
+            <a class="nav-link mx-2" href="chat.html">Chat</a>
+          </li>
         </ul>
       </div>
     </div>
@@ -58,21 +75,24 @@
     <div class="container">
       <div class="row">
         <div class="mx-auto col-md-6">
-          <h1 style="">Información</h1>
+          <h1>Contacto</h1>
         </div>
       </div>
     </div>
   </div>
-  <div class="py-5" style="">
+  <div class="text-center py-3">
     <div class="container">
       <div class="row">
-        <div class="mx-auto col-lg-6 col-md-8"> Aquí encontrarás toda la información acerca de tu identidad digital <ul>
-            <br>
-            <li class="mb-2"><a href="origenhistoria.html" target="_blank">Origen e historia</a></li>
-            <li class="mb-2"><a href="conceptos.html" target="_blank">Conceptos</a></li>
-            <li class="mb-2"><a href="seguridad.html" target="_blank">Seguridad</a></li>
-            <li class="mb-2"><a href="privacidad.html" target="_blank">Privacidad</a></li>
-          </ul>
+        <div class="mx-auto col-lg-6 col-10">
+          <p class="mb-3" >Envíe sus dudas y comentarios.</p>
+          <form class="text-left">
+            <div class="form-group"> <label for="nombre">Nombre</label> <input type="text" class="form-control" id="name" placeholder="Johann W. Goethe" required="required"> </div>
+            <div class="form-group"> <label for="correo">Correo electrónico</label> <input type="email" class="form-control" id="email" placeholder="j.goethe@werther.com" required="required"> </div>
+            <div class="form-group"> <label for="asunto">Asunto</label> <input type="text" class="form-control" id="affair" required="required" placeholder="Asunto...">
+            <div class="form-group"> <label for="mensaje">Mensaje</label> <input type="text" class="form-control h-25" id="message" required="required" placeholder="Escriba su mensaje..."> </div>
+              </div>
+            <button type="submit" class="btn btn-primary" onclick="crearPDF();">Enviar<br></button>
+          </form>
         </div>
       </div>
     </div>
