@@ -10,28 +10,12 @@
   <title>Contacto</title>
   <meta name="description">
   <meta name="keywords">
-  <meta name="author" content="Pingendo">
+  <meta name="author" content="Luis Alberto Lopez Martinez">
   <!-- CSS dependencies -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
   <link rel="stylesheet" href="wireframe.css">
   <link rel="stylesheet" href="../wireframe.css">
 </head>
-
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-<script>
-  function crearPDF(){
-    let nombre= document.getElementById('name').value;
-    let correo = document.getElementById("email").value;
-    let asunto = document.getElementById("affair").value;
-    let mensaje = document.getElementById("message").value;
-
-    var doc = new jsPDF();
-    doc.text("test", 10, 10);
-
-    doc.save("salida.pdf");
-  }
-</script>
 <body class="">
   <nav class="navbar navbar-expand-md navbar-dark bg-dark">
     <div class="container-fluid">
@@ -75,7 +59,7 @@
     <div class="container">
       <div class="row">
         <div class="mx-auto col-md-6">
-          <h1 id="ltitulo">Contacto</h1>
+          <h1 id="titulo">Contacto</h1>
         </div>
       </div>
     </div>
@@ -85,11 +69,11 @@
       <div class="row">
         <div class="mx-auto col-lg-6 col-10">
           <p class="mb-3" >Envíe sus dudas y comentarios.</p>
-          <form class="text-left">
-            <label id="nombre">Nombre</label> <input type="text" id="name" placeholder="Johann W. Goethe" required="required"> <br>
-            <label id="correo">Correo electrónico</label> <input type="email" id="email" placeholder="j.goethe@werther.com" required="required">  <br>
-            <label id="asunto">Asunto</label> <input type="text"  id="affair" required="required" placeholder="Asunto..."> <br>
-            <label id="mensaje">Mensaje</label> <input type="text" id="message" required="required" placeholder="Escriba su mensaje..."> <br>
+          <form>
+            <label id="nombre">Nombre</label> <br><input type="text" id="name" placeholder="Johann W. Goethe" required="required"> <br> <br>
+            <label id="correo">Correo electrónico</label> <br> <input type="email" id="email" placeholder="j.goethe@werther.com" required="required">  <br> <br>
+            <label id="asunto">Asunto</label> <br> <input type="text"  id="affair" required="required" placeholder="Asunto..."> <br> <br>
+            <label id="mensaje">Mensaje</label> <br> <input type="text" id="message" required="required" placeholder="Escriba su mensaje..."> <br> <br>
             <button id="convertir" type="button" onclick="crearPDF();">Enviar</button>
           </form>
         </div>
