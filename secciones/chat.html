@@ -2,6 +2,7 @@
 <html>
 
 <head>
+  <meta lang="es">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- PAGE settings -->
@@ -64,6 +65,15 @@
       </div>
     </div>
   </div>
+  <div class="py-5 text-center" style="background-image: linear-gradient(to left bottom, rgba(16, 67, 100, 0.75), rgba(10, 30, 49, 0.75)); background-size: 100%;">
+    <div class="container">
+      <div class="row">
+        <div class="mx-auto col-md-6">
+          <h1 style="color: white;">¡Haz clic en el botón de la parte inferior derecha para iniciar el bot!</h1>
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="bg-info p-1">
     <div class="container">
       <div class="row">
@@ -91,6 +101,7 @@
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+   <script> (function(d,t) { var BASE_URL="https://app.newbot.cloud"; var g=d.createElement(t),s=d.getElementsByTagName(t)[0]; g.src=BASE_URL+"/packs/js/sdk.js"; s.parentNode.insertBefore(g,s); g.onload=function(){ window.newbotSDK.run({ websiteToken: "znvAE7HeGUJLvGzX8T7veFtk", baseUrl: BASE_URL, options: { standalone: true, botName: '', websiteName: 'Chatbot', welcomeTitle: 'Hola!', welcomeTagline: 'Escribe cualquier duda que tengas acerca de la Identidad Digital', avatarUrl: '', widgetColor: '', code: [{"name":"start","params":null,"type":"function","instructions":[{"output":"Hola, bienvenido!","params":null,"decorators":[],"id":"start-71126e519ae7a13f5a9835fc9b92de07-default-1"},{"output":"Escribe palabras clave para proporcionarte información","params":null,"decorators":[],"id":"start-54e50cc9e9b65bc0ccc20354438cfc66-default-1"}],"_file":{"start":{"offset":0,"line":1,"column":1},"end":{"offset":127,"line":8,"column":1}},"decorators":[{"name":"Event","params":["start"]}],"id":"root-3535bec0e3251baa6291c8b3b6153c98-default-1"},{"name":"joke","params":null,"type":"function","instructions":[{"type":"executeFn","name":{"variable":"Request","deep":["get"],"type":"object"},"params":["https://v2.jokeapi.dev/joke/Programming?type=single"],"id":"joke-7abc00d790c44d300191eb3d485f4e41-default-1"},{"variable":"data","value":{"variable":"__return_Request-get"},"_file":{"start":{"offset":186,"line":15,"column":5},"end":{"offset":264,"line":16,"column":5}},"decorators":[],"id":"joke-2fe77c661cc4474b3f10b6336aa6595e-default-1"},{"output":{"text":"{0}","variables":[{"value":{"variable":"data","deep":["joke"],"type":"object"}}]},"params":null,"decorators":[],"id":"joke-f637415dd202b538f5bd09241fb6e63c-default-1"}],"_file":{"start":{"offset":127,"line":8,"column":1},"end":{"offset":281,"line":17,"column":2}},"decorators":[{"name":"Intent","params":["hola",["Hola","Hola!"]]}],"id":"root-af7da213307c34f65460b8cb051fdba4-default-1"}], model: {"settings":{"tag":"nlp","threshold":0.5,"autoLoad":true,"autoSave":false,"modelFileName":"model.nlp","calculateSentiment":true},"nluManager":{"settings":{"tag":"nlu-manager"},"locales":["en"],"languageNames":{},"domainManagers":{"en":{"settings":{"locale":"en","trainByDomain":false,"tag":"domain-manager-en","nluByDomain":{"default":{"className":"NeuralNlu","settings":{}}},"useStemDict":true},"stemDict":{"hola":{"intent":"hola","domain":"default"}},"intentDict":{"hola":"default"},"sentences":[{"domain":"default","utterance":"Hola","intent":"hola"},{"domain":"default","utterance":"Hola!","intent":"hola"}],"domains":{"master_domain":{"settings":{"locale":"en","tag":"nlu-en","keepStopwords":true,"nonefeatureValue":1,"nonedeltaMultiplier":1.2,"spellCheck":false,"spellCheckDistance":1,"filterZeros":true,"log":true},"features":{"hola":1},"intents":{"hola":1},"intentFeatures":{"hola":{"hola":1}},"featuresToIntent":{"hola":["hola"]},"neuralNetwork":{"settings":{"locale":"en","tag":"nlu-en","keepStopwords":true,"nonefeatureValue":1,"nonedeltaMultiplier":1.2,"spellCheck":false,"spellCheckDistance":1,"filterZeros":true,"log":true},"features":["hola"],"intents":["hola"],"perceptrons":[[9.481062889099121,4.744004180947369]]}}}}},"intentDomains":{},"extraSentences":[["en","Hola"],["en","Hola!"]]},"ner":{"settings":{"tag":"ner"},"rules":{}},"nlgManager":{"settings":{"tag":"nlg-manager"},"responses":{}},"actionManager":{"settings":{"tag":"action-manager"},"actions":{}},"slotManager":{}} } }) } })(document,"script"); </script> 
 </body>
 
 </html>

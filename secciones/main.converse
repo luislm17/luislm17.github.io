@@ -1,0 +1,86 @@
+@Event('start')
+start() {
+    > Hola, bienvenido!
+    > Escribe palabras clave para proporcionarte información (ejemplo: identidad digital, origen, seguridad, privacidad, contacto)
+    > Para ver todas las funciones, escribe "ayuda"
+}
+@Intent('ayuda', [
+    'ayuda'
+    'Ayuda'
+    'AYUDA'
+])
+ayuda() {
+    > Frases soportadas: origen, historia, identidad digital, elementos, phishing, footprinting, redes, videos, imagenes, contacto, adios
+}
+
+@Intent('origen', [
+    'Origen'
+    'historia'
+])
+origen() {
+    > En los 90s la web era texto e hipervínculos, pero muy pronto la gente se cansó de solo ver texto y también quería imágenes. Esto condujo a un elemento embebido que podrías poner en tu página web para poder mostrar una fotografía, pero en aquellos tiempos solamente enlazaba a una página diferente.
+    > En tiempos más recientes se crearon las cookies, pero si quieres aprender más visita: https://luislm17.github.io/marcoteorico/origenhistoria.html
+}
+
+@Intent('identidad', [
+    'Identidad digital'
+])
+identidad() {
+    >¿Qué es la identidad digital?
+    >La identidad digital es esencialmente cualquier dato personal existente en línea que pueda rastrearse hasta tu verdadero yo. Por ejemplo, fotos que has subido a las redes sociales, publicaciones que has creado o comentado, tu cuenta bancaria en línea, el historial del motor de búsqueda, entre otros.
+}
+
+@Intent('elementos', [
+    'Elementos'
+])
+elementos() {
+    >¿Qué elementos conforman mi identidad digital?
+    >Datos personales (Nombres y apellidos, nacionalidad, domicilios), datos bancarios, datos de contacto (correo electrónico, teléfono celular)
+}
+
+@Intent('phishing', [
+    'Phishing'
+])
+phishing() {
+    >¿Cómo puedo evitar ser victima del phishing?
+    >Comprueba que la dirección de correo electrónico corresponda con el de la empresa y evita dar clic en enlaces sospechosos.
+}
+
+@Intent('footprinting', [
+    'Footprinting'
+])
+footprinting() {
+    >¿Qué es el footprinting?
+    >Técnica utilizada para recopilar información sobre los sistemas informáticos y así poder identificar un usuario en una red.
+}
+
+@Intent('redes', [
+    'Redes sociales'
+])
+redes() {
+    >Tenemos presencia en Twitter, Instagram y TikTok:  https://luislm17.github.io/secciones/redes.html
+}
+
+@Intent('media', [
+    'videos '
+    'imagenes'
+])
+media() {
+    >Consulta nuestra galería: https://luislm17.github.io/secciones/galerias.html
+}
+
+@Intent('contacto', [
+    'contacto '
+])
+contacto() {
+    >¿Quieres enviar una duda o un comentario?:  https://luislm17.github.io/secciones/contacto.html
+}
+
+@Intent('adios', [
+    'adios '
+    'bye '
+    'hasta luego '
+])
+adios() {
+    > Un gusto haber platicado contigo, hasta luego!
+}
