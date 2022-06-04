@@ -75,7 +75,7 @@
     <div class="container">
       <div class="row">
         <div class="mx-auto col-md-6">
-          <h1>Contacto</h1>
+          <h1 id="ltitulo">Contacto</h1>
         </div>
       </div>
     </div>
@@ -86,12 +86,11 @@
         <div class="mx-auto col-lg-6 col-10">
           <p class="mb-3" >Envíe sus dudas y comentarios.</p>
           <form class="text-left">
-            <div class="form-group"> <label for="nombre">Nombre</label> <input type="text" class="form-control" id="name" placeholder="Johann W. Goethe" required="required"> </div>
-            <div class="form-group"> <label for="correo">Correo electrónico</label> <input type="email" class="form-control" id="email" placeholder="j.goethe@werther.com" required="required"> </div>
-            <div class="form-group"> <label for="asunto">Asunto</label> <input type="text" class="form-control" id="affair" required="required" placeholder="Asunto...">
-            <div class="form-group"> <label for="mensaje">Mensaje</label> <input type="text" class="form-control h-25" id="message" required="required" placeholder="Escriba su mensaje..."> </div>
-              </div>
-            <button type="submit" class="btn btn-primary" onclick="crearPDF();">Enviar<br></button>
+            <label id="nombre">Nombre</label> <input type="text" id="name" placeholder="Johann W. Goethe" required="required"> <br>
+            <label id="correo">Correo electrónico</label> <input type="email" id="email" placeholder="j.goethe@werther.com" required="required">  <br>
+            <label id="asunto">Asunto</label> <input type="text"  id="affair" required="required" placeholder="Asunto..."> <br>
+            <label id="mensaje">Mensaje</label> <input type="text" id="message" required="required" placeholder="Escriba su mensaje..."> <br>
+            <button id="convertir" type="button" onclick="crearPDF();">Enviar</button>
           </form>
         </div>
       </div>
@@ -124,6 +123,36 @@
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
+  <script>
+    function crearPDF(){
+    //variables (labels)
+    var ltitulo = document.getElementById('titulo').innerText;
+    var lnombre = document.getElementById('nombre').innerText;
+    var lcorreo = document.getElementById('correo').innerText;
+    var lasunto = document.getElementById('asunto').innerText;
+    var lmensaje = document.getElementById('mensaje').innerText;
+
+    //variables (valores)
+    var vnombre = document.getElementById('name').value;
+    var vcorreo = document.getElementById('email').value;
+    var vasunto = document.getElementById('affair').value;
+    var vmensaje = document.getElementById('message').value;
+    
+    //jspdf
+    var doc = new jsPDF();
+    doc.setFontSize(8);
+    doc.text("(Ticket generado correctamente)", 20, 10);
+    doc.setFontSize(22);
+    doc.text(ltitulo, 20, 20);
+    doc.setFontSize(16);
+    doc.text(lnombre + ': ' + vnombre, 10, 30);
+    doc.text(lcorreo + ': ' + vcorreo, 10, 40);
+    doc.text(lasunto + ': ' + vasunto, 10, 50);
+    doc.text(lmensaje + ': ' + vmensaje, 10, 60);
+    doc.save('contacto.pdf');
+    }
+  </script>
 </body>
 
 </html>
